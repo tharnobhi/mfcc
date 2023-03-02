@@ -3,8 +3,8 @@ import pandas as pd
 import librosa
 import numpy as np
 
-# Set the path to the directory containing the MP3 files
-audio_path = "audio data/"
+# Set the path to the directory containing the WAV files
+audio_path = "audio data/vad/"
 
 # Define a function to extract MFCCs from an audio file
 def extract_mfcc(audio_file):
@@ -21,7 +21,7 @@ labels = []
 
 # Loop through all the audio files in the directory and extract their MFCCs
 for filename in os.listdir(audio_path):
-    if filename.endswith(".mp3"):
+    if filename.endswith(".wav"):
         file_path = os.path.join(audio_path, filename)
         label = filename.split("_")[0]  # extract the label from the filename
         mfccs = extract_mfcc(file_path)
